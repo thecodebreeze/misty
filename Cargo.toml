@@ -1,6 +1,6 @@
 [workspace]
 resolver = "3"
-members = ["crates/misty-ast", "crates/misty-codegen-rs","crates/misty-compiler", "crates/misty-core", "crates/misty-net", "crates/misty-parser"]
+members = ["crates/misty-ast", "crates/misty-codegen-rs", "crates/misty-compiler", "crates/misty-core", "crates/misty-net", "crates/misty-parser"]
 
 [workspace.package]
 rust-version = "1.92.0"
@@ -15,3 +15,9 @@ keywords = ["networking", "quic", "idl", "codegen"]
 categories = ["compilers", "command-line-utilities", "network-programming", "parser-implementations", "web-programming"]
 
 [workspace.dependencies]
+# Internal crates
+misty-ast = { path = "crates/misty-ast", version = "0.0.1" }
+misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.1" }
+misty-core = { path = "crates/misty-core", version = "0.0.1" }
+misty-net = { path = "crates/misty-net", version = "0.0.1" }
+misty-parser = { path = "crates/misty-parser", version = "0.0.1" }
