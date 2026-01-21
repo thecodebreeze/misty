@@ -21,3 +21,8 @@ misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.1" }
 misty-core = { path = "crates/misty-core", version = "0.0.1" }
 misty-net = { path = "crates/misty-net", version = "0.0.1" }
 misty-parser = { path = "crates/misty-parser", version = "0.0.1" }
+
+pest = { version = "2.8.5" }
+pest_derive = { version = "2.8.5" }
+
+thiserror = { version = "2.0.18" }

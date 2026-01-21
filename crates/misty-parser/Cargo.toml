@@ -14,3 +14,7 @@ keywords.workspace = true
 categories.workspace = true
 
 [dependencies]
+misty-ast = { workspace = true }
+
+pest = { workspace = true }
+pest_derive = { workspace = true }

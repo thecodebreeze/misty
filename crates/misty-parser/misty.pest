@@ -1,0 +1,64 @@
+// --- Whitespace & Comments ---
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+COMMENT    = _{ "//" ~ (!"\n" ~ ANY)* }
+
+// --- Keywords ---
+IMPORT_KW    = _{ "import" }
+INTERFACE_KW = _{ "interface" }
+SCHEMA_KW    = _{ "schema" }
+ENUM_KW      = _{ "enum" }
+FN_KW        = _{ "fn" }
+STREAM_KW    =  { "stream" }
+
+// --- Identifiers (Strict Enforcing) ---
+// PascalCase for Types (Schemas, Enums, Interfaces)
+ident_pascal = @{ ASCII_ALPHA_UPPER ~ ASCII_ALPHANUMERIC* }
+
+// snake_case for Functions, Fields, Modules
+ident_snake  = @{ ASCII_ALPHA_LOWER ~ (ASCII_ALPHANUMERIC | "_")* }
+
+// SCREAMING_SNAKE_CASE for Enum Variants
+ident_scream = @{ ASCII_ALPHA_UPPER ~ (ASCII_ALPHA_UPPER | ASCII_DIGIT | "_")* }
+
+// --- Primitives ---
+primitive = {
+    "u8" | "u16" | "u32" | "u64" | "u128" |
+    "i8" | "i16" | "i32" | "i64" | "i128" |
+    "f32" | "f64" | "bool" | "str"
+}
+
+// --- Type System ---
+// A type reference like "Person" or "users.Address" or "ml.analyzer.Analysis"
+user_type = @{ (ident_snake ~ ".")* ~ ident_pascal }
+
+// Types allowed in Schemas (allows nesting, e.g., option<vec<T>>)
+container_type = { "vec" | "option" }
+container = { container_type ~ "<" ~ field_type ~ ">" }
+field_type = { container | primitive | user_type }
+
+// --- Top Level Definitions ---
+
+// Imports: import ml.analyzer;
+import_stmt = { IMPORT_KW ~ ident_snake ~ ("." ~ ident_snake)* ~ ";" }
+
+// Enums: enum Language { ... }
+enum_def = { ENUM_KW ~ ident_pascal ~ "{" ~ (ident_scream ~ ",")* ~ ident_scream? ~ "}" }
+
+// Schemas: schema Person { ... }
+field_def = { ident_snake ~ ":" ~ field_type ~ ";" }
+schema_def = { SCHEMA_KW ~ ident_pascal ~ "{" ~ field_def* ~ "}" }
+
+// Interfaces: interface MyService { ... }
+// fn name(stream? type): stream? type;
+fn_arg = { STREAM_KW? ~ field_type }
+fn_return = { STREAM_KW? ~ field_type }
+fn_def = {
+    FN_KW ~ ident_snake ~
+    "(" ~ fn_arg ~ ")" ~
+    (":" ~ fn_return)? ~ // Return type is optional
+    ";"
+}
+interface_def = { INTERFACE_KW ~ ident_pascal ~ "{" ~ fn_def* ~ "}" }
+
+// --- File Root ---
+file = { SOI ~ import_stmt* ~ (interface_def | schema_def | enum_def)* ~ EOI }
