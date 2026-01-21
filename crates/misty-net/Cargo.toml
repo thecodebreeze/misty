@@ -1,0 +1,16 @@
+[package]
+name = "misty-net"
+description = "Networking code for Misty, utility functions for codegen, router, client, and server implementations"
+version = "0.0.1"
+rust-version.workspace = true
+edition.workspace = true
+publish.workspace = true
+authors.workspace = true
+repository.workspace = true
+documentation.workspace = true
+homepage.workspace = true
+license.workspace = true
+keywords.workspace = true
+categories.workspace = true
+
+[dependencies]

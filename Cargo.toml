@@ -1,0 +1,17 @@
+[workspace]
+resolver = "3"
+members = ["crates/misty-ast", "crates/misty-codegen-rs","crates/misty-compiler", "crates/misty-core", "crates/misty-net", "crates/misty-parser"]
+
+[workspace.package]
+rust-version = "1.92.0"
+edition = "2024"
+publish = true
+authors = ["codebreeze <codebreeze@znth.systems>"]
+repository = "https://github.com/thecodebreeze/misty"
+documentation = "https://github.com/thecodebreeze/misty/wiki"
+homepage = "https://github.com/thecodebreeze/misty"
+license = "BSD-3"
+keywords = ["networking", "quic", "idl", "codegen"]
+categories = ["compilers", "command-line-utilities", "network-programming", "parser-implementations", "web-programming"]
+
+[workspace.dependencies]
