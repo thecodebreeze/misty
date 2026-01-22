@@ -9,12 +9,12 @@ mod interface;
 mod misty_enum;
 mod schema;
 
-pub use data_type::parse_data_type;
-pub use function::parse_function;
-pub use import::parse_import;
-pub use interface::parse_interface;
-pub use misty_enum::parse_enum;
-pub use schema::parse_schema;
+pub(crate) use data_type::parse_data_type;
+pub(crate) use function::parse_function;
+pub(crate) use import::parse_import;
+pub(crate) use interface::parse_interface;
+pub(crate) use misty_enum::parse_enum;
+pub(crate) use schema::parse_schema;
 
 use crate::ParserError;
 use crate::pest_parser::{MistyPestParser, Rule};
