@@ -18,7 +18,7 @@ categories = ["compilers", "command-line-utilities", "network-programming", "par
 # Internal crates
 misty-ast = { path = "crates/misty-ast", version = "0.0.2" }
 misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.1" }
-misty-core = { path = "crates/misty-core", version = "0.0.2" }
+misty-core = { path = "crates/misty-core", version = "0.0.3" }
 misty-net = { path = "crates/misty-net", version = "0.0.1" }
 misty-parser = { path = "crates/misty-parser", version = "0.0.3" }
 

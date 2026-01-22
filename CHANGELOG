@@ -1,32 +1,47 @@
 CHANGELOG
 =========
 
-VERSION 0.0.3 (2026-01-22)
---------------------------
+MISTY-CORE VERSION 0.0.3 (2026-01-22)
+------------------------------------
 
 Added:
-- `misty-parser`: Validator module Workspace struct.
-- `misty-parser`: Full workspace validator implementation.
+- `CodeGenerator` trait for unified code generation interface.
 
 Changed:
-- `misty-parser`: Added crate scoping to the public uses of the AST parsers.
-- `misty-core`: Bumped to 0.0.2.
-- `misty-parser`: Bumped to 0.0.3.
+- Added dependency on `misty-parser`.
 
-VERSION 0.0.2 (2026-01-22)
---------------------------
+MISTY-PARSER VERSION 0.0.3 (2026-01-22)
+--------------------------------------
 
 Added:
-- `misty-ast`: File AST node.
-- `misty-ast`: Full AST definition for the Misty language.
-- `misty-core`: Basic error shells.
-- `misty-parser`: Pest parser and grammar for Misty.
-- `misty-parser`: All AST node parsers.
+- Validator module Workspace struct.
+- Full workspace validator implementation.
 
 Changed:
-- `misty-core`: Refactored to remove errors for improved flexibility.
-- `misty-ast`: Bumped to 0.0.2.
-- `misty-parser`: Bumped to 0.0.2.
+- Added crate scoping to the public uses of the AST parsers.
+
+MISTY-PARSER VERSION 0.0.2 (2026-01-22)
+--------------------------------------
+
+Added:
+- Pest parser and grammar for Misty.
+- All AST node parsers.
+
+MISTY-CORE VERSION 0.0.2 (2026-01-22)
+------------------------------------
+
+Added:
+- Basic error shells.
+
+Changed:
+- Refactored to remove errors for improved flexibility.
+
+MISTY-AST VERSION 0.0.2 (2026-01-22)
+-----------------------------------
+
+Added:
+- File AST node.
+- Full AST definition for the Misty language.
 
 VERSION 0.0.1 (2026-01-21)
 --------------------------
