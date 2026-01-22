@@ -82,7 +82,7 @@ version = "0.0.1"
 
 [[package]]
 name = "misty-core"
-version = "0.0.1"
+version = "0.0.2"
 dependencies = [
  "thiserror",
 ]
