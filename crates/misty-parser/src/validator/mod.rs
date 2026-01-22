@@ -7,8 +7,10 @@
 //!
 //! `package-remote` is currently not implemented, it is planned for implementation with the
 //! package manager and registry feature.
-mod import_solver;
+mod error;
+mod imports;
 mod type_resolver;
 mod workspace;
 
+pub use error::ValidationError;
 pub use workspace::Workspace;

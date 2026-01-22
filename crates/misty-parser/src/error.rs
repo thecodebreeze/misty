@@ -1,5 +1,7 @@
 use crate::pest_parser::Rule;
+use crate::validator::ValidationError;
 
+/// General parser errors.
 #[derive(Debug, thiserror::Error)]
 pub enum ParserError {
     #[error("Pest Parser Error: {0}")]
@@ -40,4 +42,7 @@ pub enum ParserError {
 
     #[error("The Function Argument type is invalid or is missing")]
     FunctionArgumentDataType,
+
+    #[error("Validation Error: {0}")]
+    Validation(#[from] ValidationError),
 }

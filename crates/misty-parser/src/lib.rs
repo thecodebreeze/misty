@@ -5,3 +5,4 @@ mod validator;
 
 pub use ast::parse;
 pub use error::ParserError;
+pub use validator::Workspace;
