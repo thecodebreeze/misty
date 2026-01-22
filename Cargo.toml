@@ -17,13 +17,19 @@ categories = ["compilers", "command-line-utilities", "network-programming", "par
 [workspace.dependencies]
 # Internal crates
 misty-ast = { path = "crates/misty-ast", version = "0.0.2" }
-misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.1" }
+misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.2" }
 misty-core = { path = "crates/misty-core", version = "0.0.3" }
 misty-net = { path = "crates/misty-net", version = "0.0.1" }
 misty-parser = { path = "crates/misty-parser", version = "0.0.3" }
 
+heck = { version = "0.5.0" }
+
+blake3 = { version = "1.8.3", features = ["mmap", "rayon"] }
+
 pest = { version = "2.8.5" }
 pest_derive = { version = "2.8.5" }
+quote = { version = "1.0.43" }
+proc-macro2 = { version = "1.0.106" }
 
 thiserror = { version = "2.0.18" }
 
