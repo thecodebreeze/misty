@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+MISTY-CODEGEN-RS VERSION 0.0.2 (2026-01-22)
+------------------------------------------
+
+Added:
+- Code generation for schemas and enums.
+
 MISTY-CORE VERSION 0.0.3 (2026-01-22)
 ------------------------------------
 
