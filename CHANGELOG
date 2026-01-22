@@ -1,6 +1,33 @@
 CHANGELOG
 =========
 
+VERSION 0.0.3 (2026-01-22)
+--------------------------
+
+Added:
+- `misty-parser`: Validator module Workspace struct.
+- `misty-parser`: Full workspace validator implementation.
+
+Changed:
+- `misty-parser`: Added crate scoping to the public uses of the AST parsers.
+- `misty-core`: Bumped to 0.0.2.
+- `misty-parser`: Bumped to 0.0.3.
+
+VERSION 0.0.2 (2026-01-22)
+--------------------------
+
+Added:
+- `misty-ast`: File AST node.
+- `misty-ast`: Full AST definition for the Misty language.
+- `misty-core`: Basic error shells.
+- `misty-parser`: Pest parser and grammar for Misty.
+- `misty-parser`: All AST node parsers.
+
+Changed:
+- `misty-core`: Refactored to remove errors for improved flexibility.
+- `misty-ast`: Bumped to 0.0.2.
+- `misty-parser`: Bumped to 0.0.2.
+
 VERSION 0.0.1 (2026-01-21)
 --------------------------
 
