@@ -19,8 +19,18 @@ categories = ["compilers", "command-line-utilities", "network-programming", "par
 misty-ast = { path = "crates/misty-ast", version = "0.0.2" }
 misty-codegen-rs = { path = "crates/misty-codegen-rs", version = "0.0.2" }
 misty-core = { path = "crates/misty-core", version = "0.0.3" }
-misty-net = { path = "crates/misty-net", version = "0.0.1" }
+misty-net = { path = "crates/misty-net", version = "0.0.2" }
 misty-parser = { path = "crates/misty-parser", version = "0.0.3" }
+
+tokio-util = { version = "0.7.18", features = ["full"] }
+futures-util = { version = "0.3.31", features = ["sink"] }
+async-trait = { version = "0.1.89" }
+
+quinn = { version = "0.11.9" }
+
+serde = { version = "1.0.228", features = ["derive"] }
+bytes = { version = "1.11.0", features = ["serde"] }
+rmp-serde = { version = "1.3.1" }
 
 heck = { version = "0.5.0" }
 

@@ -1,6 +1,20 @@
 CHANGELOG
 =========
 
+MISTY-NET VERSION 0.0.2 (2026-01-22)
+------------------------------------
+
+Added:
+- `MistyCodec` for frame-based communication using `LengthDelimitedCodec` and MessagePack.
+- `Frame`, `HeadFrame`, `TailFrame` definitions for the Misty protocol.
+- `Status` enum for protocol-level status codes.
+- `Router` for dispatching service calls.
+- `MistyService` trait for implementing networked services.
+- `NetError` for unified network error handling.
+
+Changed:
+- Added dependencies: `quinn`, `tokio-util`, `rmp-serde`, `async-trait`, `bytes`, `serde`.
+
 MISTY-CODEGEN-RS VERSION 0.0.2 (2026-01-22)
 ------------------------------------------
 
